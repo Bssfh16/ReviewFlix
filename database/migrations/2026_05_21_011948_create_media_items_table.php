@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('genre')->nullable();
             $table->integer('duration')->nullable();
             $table->date('release_date')->nullable();
-            $table->date('published_date')->useCurrent();
             $table->timestamps();
         });
     }
