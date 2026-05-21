@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\NewsItem;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
  * @extends Factory<NewsItem>

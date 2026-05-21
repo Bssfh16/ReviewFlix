@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\FaqItem;
+use App\Models\FaqCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

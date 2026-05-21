@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Review;
+use App\Models\User;
+use App\Models\MediaItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
