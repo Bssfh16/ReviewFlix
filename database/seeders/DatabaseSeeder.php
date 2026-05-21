@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
         MediaItem::factory(5)->create();
 
-        FaqCategory::factory(5)->create();
+        FaqCategory::factory(6)->create();
 
         FaqItem::factory(5)->create();
 
