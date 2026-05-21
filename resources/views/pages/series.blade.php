@@ -12,7 +12,7 @@
             <img src="{{ $serie->image }}" alt="{{ $serie->title }}">
             <p><strong>Genre:</strong> {{ $serie->genre }}</p>
             <p><strong>Summary:</strong> {{ $serie->summary }}</p>
-            <p><strong>Duration:</strong> {{ $serie->duration }} minutes</p>
+            <p><strong>Episodes:</strong> {{ $serie->episodes }}</p>
             <p><strong>Release Date:</strong> {{ $serie->release_date }}</p>
         </div>
     @endforeach
