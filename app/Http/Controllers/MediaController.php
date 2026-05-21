@@ -15,7 +15,7 @@ class MediaController extends Controller
 
     public function series() {
         $series = MediaItem::where('type', 'Serie')->get(); 
-        return $series;
+        return view('pages.series', ['series' => $series]);
     }
 
 }    
