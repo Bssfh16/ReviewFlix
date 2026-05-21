@@ -10,7 +10,7 @@ class MediaController extends Controller
 {
     public function movies() {
         $movies = MediaItem::where('type', 'Movie')->get(); 
-        return $movies;
+        return view('pages.movies', ['movies' => $movies]);
     }
 
     public function series() {
