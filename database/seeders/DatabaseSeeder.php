@@ -33,5 +33,7 @@ class DatabaseSeeder extends Seeder
         FaqItem::factory(5)->create();
 
         Review::factory(5)->create();
+
+        Contact::factory(5)->create();
     }
 }
