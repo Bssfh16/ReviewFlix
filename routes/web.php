@@ -7,7 +7,9 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', function () {
+    return view('pages.home');
+});
 
 Route::get('/news', [NewsController::class, 'index']);
 

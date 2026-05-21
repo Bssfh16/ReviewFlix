@@ -9,6 +9,7 @@
     <header>
         <h1>ReviewFlix - @yield('title')</h1>
         <nav>
+            <a href="/">Home</a> | 
             <a href="/news">News</a> | 
             <a href="/movies">Movies</a> | 
             <a href="/series">Series</a> |
@@ -19,7 +20,7 @@
     </header>
 
     <main>
-        @yield('title')
+        @yield('content')
     </main>
 
     <footer>
