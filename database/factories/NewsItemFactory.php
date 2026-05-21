@@ -23,7 +23,6 @@ class NewsItemFactory extends Factory
             'title' => $this->faker->sentence(),
             'content' => $this->faker->paragraphs(2, true),
             'image' => $this->faker->imageUrl(),
-            'user_id' => User::factory(),
         ];
     }
 }
