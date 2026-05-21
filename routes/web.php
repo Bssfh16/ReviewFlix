@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ReviewController;
 
 Route::view('/', 'welcome')->name('home');
 
@@ -14,6 +15,8 @@ Route::get('/movies', [MediaController::class, 'movies']);
 Route::get('/series', [MediaController::class, 'series']);
 
 Route::get('/faq', [FaqController::class, 'index']);
+
+Route::get('/reviews', [ReviewController::class, 'index']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
