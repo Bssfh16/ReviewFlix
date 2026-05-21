@@ -9,8 +9,8 @@ class ReviewController extends Controller
 {
     public function index() {
         {
-            $reviews = Review::all(); 
-            return $reviews;
+            $reviews = Review::with('mediaItem', 'user')->get();
+            return view('pages.reviews', ['reviews' => $reviews]);
         }
     }
     
