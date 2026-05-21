@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>ReviewFlix</h1>
+        <h1>ReviewFlix - @yield('title')</h1>
         <nav>
             <a href="/news">News</a> | 
             <a href="/movies">Movies</a> | 
@@ -19,7 +19,7 @@
     </header>
 
     <main>
-        
+        @yield('title')
     </main>
 
     <footer>
