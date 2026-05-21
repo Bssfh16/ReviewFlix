@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('media_items', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('movie');
+            $table->string('type')->default('Movie');
             $table->string('title');
             $table->string('image')->nullable();
             $table->text('summary')->nullable();
