@@ -23,6 +23,8 @@ Route::get('/reviews', [ReviewController::class, 'index']);
 
 Route::get('/contact', [ContactController::class, 'index']);
 
+Route::post('/contact', [ContactController::class, 'store']);
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
