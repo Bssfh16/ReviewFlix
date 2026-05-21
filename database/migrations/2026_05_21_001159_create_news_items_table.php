@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('news_items', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('movie');
             $table->string('title');
-            $table->string('image')->nullable();
             $table->text('content');
-            $table->integer('duration')->nullable();
-            $table->date('release_date')->nullable();
+            $table->string('image')->nullable();
             $table->date('published_date')->useCurrent()
             $table->timestamps();
         });
