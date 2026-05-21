@@ -16,6 +16,20 @@
             <a href="/reviews">Reviews</a> |          
             <a href="/faq">FAQ</a> |
             <a href="/contact">Contact</a>
+
+            @auth
+                <a href="/dashboard">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                        @csrf
+
+                    <button type="submit" style="background:none; border:none; cursor:pointer; text-decoration:underline;">
+                        Log out
+                    </button>
+                    </form>
+                @else
+                <a href="/login">Log in</a>
+                <a href="/register">Register</a>
+            @endauth
         </nav>
     </header>
 
