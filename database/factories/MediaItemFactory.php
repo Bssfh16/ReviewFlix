@@ -23,7 +23,7 @@ class MediaItemFactory extends Factory
         return [
             'type' => $this->faker->randomElement($types),
             'title' => $this->faker->sentence(),
-            'cover_image' => $this->faker->imageUrl(),
+            'image' => $this->faker->imageUrl(),
             'summary' => $this->faker->paragraphs(5, true),
             'genre' => $this->faker->randomElement($genres),
             'duration' => $this->faker->numberBetween(65, 190),
