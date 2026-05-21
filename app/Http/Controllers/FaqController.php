@@ -10,7 +10,7 @@ class FaqController extends Controller
     public function index() {
         {
             $faq = FaqCategory::with('faqitems')->get(); 
-            return $faq;
+            return view('pages.faq', ['faq' => $faq]);
         }
     }
 
