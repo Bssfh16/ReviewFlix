@@ -9,7 +9,7 @@ class FaqCategory extends Model
 {
     use HasFactory;
 
-    public function items() {
+    public function faqitems() {
         return $this->hasMany(FaqItem::class);
     }
 
