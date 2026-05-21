@@ -8,9 +8,7 @@ use App\Models\NewsItem;
 class NewsController extends Controller 
 {
     public function index() {
-        {
             $news = NewsItem::all();
-            return $news;
-        }    
-    }
+            return view('pages.news', ['news' => $news]);
+    }    
 }
