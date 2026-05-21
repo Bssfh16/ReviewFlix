@@ -20,7 +20,7 @@ class FaqItemFactory extends Factory
         return [
             'faq_category_id' => FaqCategory::factory(),
             'question' => $this->faker->sentence() . '?',
-            'answer' => $this->faker->paragraph(2, true),
+            'answer' => $this->faker->paragraphs(2, true),
         ];
     }
 }

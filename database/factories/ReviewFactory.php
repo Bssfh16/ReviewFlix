@@ -21,7 +21,7 @@ class ReviewFactory extends Factory
             'user_id' => User::factory(),
             'media_item_id' => MediaItem::factory(),
             'rating' => $this->faker->numberBetween(1, 5),
-            'opinion' => $this->faker->paragraph(2, true),
+            'opinion' => $this->faker->paragraphs(2, true),
         ];
     }
 }
