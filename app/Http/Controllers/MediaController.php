@@ -18,4 +18,8 @@ class MediaController extends Controller
         return view('pages.series', ['series' => $series]);
     }
 
+    public function adminIndex() {
+    return view('admin.media.index');
+    }
+
 }    

@@ -5,6 +5,18 @@
         </h2>
     </x-slot>
 
+    <!-- Admin Menu/Navigation -->
+    <div class="mb-8 p-4 bg-gray-100 rounded">
+        <h3 class="text-lg font-bold mb-4">Admin Panel</h3>
+        <div class="space-y-2">
+            <a href="{{ route('dashboard') }}" class="block">📊 Dashboard (Users)</a>
+            <a href="{{ route('news.admin-index') }}" class="block">📰 Manage News</a>
+            <a href="{{ route('media.admin-index') }}" class="block">🎬 Manage Movies/Series</a>
+            <a href="{{ route('faq.admin-index') }}" class="block">❓ Manage FAQ</a>
+            <a href="{{ route('contacts.admin-index') }}" class="block">💌 View Messages</a>
+        </div>
+    </div>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             

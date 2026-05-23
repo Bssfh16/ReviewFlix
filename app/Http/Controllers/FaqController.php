@@ -14,4 +14,8 @@ class FaqController extends Controller
         }
     }
 
+    public function adminIndex() {
+    return view('admin.faq.index');
+    }
+
 }

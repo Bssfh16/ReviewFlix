@@ -58,6 +58,21 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminUserController::class, 'index'])->name('dashboard');
     Route::post('/users', [AdminUserController::class, 'store'])->name('users.store');
     Route::patch('/users/{user}/toggle-admin', [AdminUserController::class, 'toggleAdmin'])->name('users.toggle-admin');
+
+    Route::get('/admin/news', [NewsController::class, 'adminIndex'])->name('news.admin-index');
+    Route::get('/admin/news/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/admin/news', [NewsController::class, 'store'])->name('news.store');
+    Route::get('/admin/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+    Route::patch('/admin/news/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/admin/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+    Route::get('/admin/media', [MediaController::class, 'adminIndex'])->name('media.admin-index');
+    
+    Route::get('/admin/faq', [FaqController::class, 'adminIndex'])->name('faq.admin-index');
+    
+    Route::get('/admin/contacts', [ContactController::class, 'adminIndex'])->name('contacts.admin-index');
+
+
 });
 
 require __DIR__.'/auth.php';

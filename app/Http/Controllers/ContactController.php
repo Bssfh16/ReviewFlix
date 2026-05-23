@@ -25,4 +25,7 @@ class ContactController extends Controller
         return redirect('/contact')->with('success', 'Message sent succesfully!');
     }
     
+    public function adminIndex() {
+    return view('admin.contacts.index');
+    }
 }
