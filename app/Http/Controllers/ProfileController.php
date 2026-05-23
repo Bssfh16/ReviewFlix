@@ -22,13 +22,6 @@ class ProfileController extends Controller
         return view('pages.profile', ['user' => $user]);
     }
 
-    public function edit(Request $request): View
-    {
-        return view('pages.profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
-
     /**
      * Update the user's profile information.
      */
@@ -36,7 +29,7 @@ class ProfileController extends Controller
     {
         $user = $request->user();
         
-        user()->fill($request->validated());
+        $user->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
@@ -44,7 +37,8 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return Redirect::route('pages.profile.edit')->with('status', 'profile-updated');
+        return redirect()->route('profile.show', ['username' => $user->username])
+            ->with('status', 'profile-updated');
     }
 
     /**

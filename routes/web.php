@@ -24,11 +24,18 @@ Route::get('/faq', [FaqController::class, 'index']);
 
 Route::get('/reviews', [ReviewController::class, 'index']);
 
+Route::middleware('auth')->group(function () {
+    Route::get('/media/{id}/review', [ReviewController::class, 'create'])->name('review.create');
+    Route::post('/reviews', [ReviewController::class, 'store'])->name('review.store');
+});
+
 Route::get('/contact', [ContactController::class, 'index']);
 
 Route::post('/contact', [ContactController::class, 'store']);
 
-Route::get('/profile/{username}', [ProfileController::class, 'show']);
+Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');
+
+Route::post('/profile/update', [ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
