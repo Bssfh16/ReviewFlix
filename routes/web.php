@@ -67,6 +67,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 
     Route::get('/admin/media', [MediaController::class, 'adminIndex'])->name('media.admin-index');
+    Route::get('/admin/media/create', [MediaController::class, 'create'])->name('media.create');
+    Route::post('/admin/media', [MediaController::class, 'store'])->name('media.store');
+    Route::get('/admin/media/{id}/edit', [MediaController::class, 'edit'])->name('media.edit');
+    Route::patch('/admin/media/{id}', [MediaController::class, 'update'])->name('media.update');
+    Route::delete('/admin/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
     
     Route::get('/admin/faq', [FaqController::class, 'adminIndex'])->name('faq.admin-index');
     
