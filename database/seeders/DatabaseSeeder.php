@@ -34,7 +34,12 @@ class DatabaseSeeder extends Seeder
 
         MediaItem::factory(5)->create();
 
-        FaqCategory::factory(6)->create();
+        FaqCategory::create(['subject' => 'Account']);
+        FaqCategory::create(['subject' => 'Reviews']);
+        FaqCategory::create(['subject' => 'General']);
+        FaqCategory::create(['subject' => 'Films']);
+        FaqCategory::create(['subject' => 'Features']);
+        FaqCategory::create(['subject' => 'Technical']);
 
         FaqItem::factory(5)->create();
 

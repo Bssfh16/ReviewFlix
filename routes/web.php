@@ -74,6 +74,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
 
     Route::get('/admin/faq', [FaqController::class, 'adminIndex'])->name('faq.admin-index');
+    Route::get('/admin/faq/category/create', [FaqController::class, 'createCategory'])->name('faq.category-create');
+    Route::post('/admin/faq/category', [FaqController::class, 'storeCategory'])->name('faq.category-store');
+    Route::delete('/admin/faq/category/{id}', [FaqController::class, 'destroyCategory'])->name('faq.category-destroy');
+    Route::get('/admin/faq/item/create', [FaqController::class, 'createItem'])->name('faq.item-create');
+    Route::post('/admin/faq/item', [FaqController::class, 'storeItem'])->name('faq.item-store');
+    Route::get('/admin/faq/item/{id}/edit', [FaqController::class, 'editItem'])->name('faq.item-edit');
+    Route::patch('/admin/faq/item/{id}', [FaqController::class, 'updateItem'])->name('faq.item-update');
+    Route::delete('/admin/faq/item/{id}', [FaqController::class, 'destroyItem'])->name('faq.item-destroy');
     
     Route::get('/admin/contacts', [ContactController::class, 'adminIndex'])->name('contacts.admin-index');
     Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');

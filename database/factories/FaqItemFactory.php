@@ -19,7 +19,7 @@ class FaqItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'faq_category_id' => FaqCategory::factory(),
+            'faq_category_id' => FaqCategory::inRandomOrder()->first()->id,
             'question' => $this->faker->sentence() . '?',
             'answer' => $this->faker->paragraphs(2, true),
         ];

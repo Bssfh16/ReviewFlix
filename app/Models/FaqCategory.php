@@ -9,9 +9,12 @@ class FaqCategory extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+    'subject',
+    ];
+
     public function faqitems() {
         return $this->hasMany(FaqItem::class);
     }
-
-    
+  
 }
