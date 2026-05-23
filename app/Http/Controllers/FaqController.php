@@ -33,13 +33,13 @@ class FaqController extends Controller
     // Admin: Store category
     public function storeCategory(Request $request)
     {
-        $request->validate([
-            'subject' => 'required|string|max:255',
-        ]);
+    $request->validate([
+        'subject' => 'required|string|max:255|unique:faq_categories,subject',
+    ]);
 
-        FaqCategory::create($request->all());
+    FaqCategory::create($request->all());
 
-        return redirect(route('faq.admin-index'))->with('success', 'Category created!');
+    return redirect(route('faq.admin-index'))->with('success', 'Category created!');
     }
 
     // Admin: Delete category
