@@ -19,7 +19,9 @@
 
             @auth
                 <a href="/profile/{{ auth()->user()->username }}">Profile</a> |
-                <a href="/dashboard">Dashboard</a>
+                @if(auth()->check() && auth()->user()->is_admin)
+                    <a href="/dashboard">Dashboard</a>
+                @endif
                     <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                         @csrf
 
