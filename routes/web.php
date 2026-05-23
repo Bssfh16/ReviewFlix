@@ -28,6 +28,8 @@ Route::get('/contact', [ContactController::class, 'index']);
 
 Route::post('/contact', [ContactController::class, 'store']);
 
+Route::get('/profile/{username}', [ProfileController::class, 'show']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

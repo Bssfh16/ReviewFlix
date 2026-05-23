@@ -18,6 +18,7 @@
             <a href="/contact">Contact</a>
 
             @auth
+                <a href="/profile/{{ auth()->user()->username }}">Profile</a> |
                 <a href="/dashboard">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                         @csrf
