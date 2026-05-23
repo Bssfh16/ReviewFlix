@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -21,6 +22,8 @@ class ContactController extends Controller
         ]);
 
         Contact::create($validatedData);
+
+        Mail::to('admin@ehb.be')->send(new \App\Mail\ContactMail($request->all()));
 
         return redirect('/contact')->with('success', 'Message sent succesfully!');
     }
