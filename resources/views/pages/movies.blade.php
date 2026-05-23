@@ -13,7 +13,7 @@
             <p><strong>Genre:</strong> {{ $movie->genre }}</p>
             <p><strong>Summary:</strong> {{ $movie->summary }}</p>
             <p><strong>Duration:</strong> {{ $movie->duration }} minutes</p>
-            <p><strong>Release Date:</strong> {{ $movie->release_date }}</p>
+            <p><strong>Release Date:</strong> {{ $movie->release_date?->format('d-m-Y') }}</p>
 
             @if(auth()->check())
                 <a href="{{ route('review.create', $movie->id) }}">Write Review</a>

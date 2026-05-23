@@ -72,11 +72,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/media/{id}/edit', [MediaController::class, 'edit'])->name('media.edit');
     Route::patch('/admin/media/{id}', [MediaController::class, 'update'])->name('media.update');
     Route::delete('/admin/media/{id}', [MediaController::class, 'destroy'])->name('media.destroy');
-    
+
     Route::get('/admin/faq', [FaqController::class, 'adminIndex'])->name('faq.admin-index');
     
     Route::get('/admin/contacts', [ContactController::class, 'adminIndex'])->name('contacts.admin-index');
-
+    Route::delete('/admin/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
 });
 

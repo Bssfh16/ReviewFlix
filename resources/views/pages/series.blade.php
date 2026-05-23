@@ -13,10 +13,10 @@
             <p><strong>Genre:</strong> {{ $serie->genre }}</p>
             <p><strong>Summary:</strong> {{ $serie->summary }}</p>
             <p><strong>Episodes:</strong> {{ $serie->episodes }}</p>
-            <p><strong>Release Date:</strong> {{ $serie->release_date }}</p>
+            <p><strong>Release Date:</strong> {{ $serie->release_date?->format('d-m-Y') }}</p>
 
             @if(auth()->check())
-                <a href="{{ route('review.create', $movie->id) }}">Write Review</a>
+                <a href="{{ route('review.create', $serie->id) }}">Write Review</a>
             @else
                 <p><a href="/login">Login to write a review</a></p>
             @endif
