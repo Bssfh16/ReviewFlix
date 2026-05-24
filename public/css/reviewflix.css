@@ -1,0 +1,472 @@
+/* === ROOT === */
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --danger: #e74c3c;
+    --success: #27ae60;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #bdc3c7;
+    --bg-light: #ecf0f1;
+    --white: #ffffff;
+    --spacing: 1rem;
+}
+
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0 1rem 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+header h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav a, nav button {
+    color: var(--white);
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+nav a:hover, nav button:hover {
+    border-bottom: 2px solid var(--white);
+    text-decoration: none;
+}
+
+/* === MAIN CONTENT === */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* === FORMS === */
+/* Only forms in main content */
+main form,
+.section form {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+/* Remove from nav */
+nav form {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+label {
+    display: block;
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 500;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--white);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* === BUTTONS === */
+button, .btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: var(--secondary);
+    text-decoration: none;
+}
+
+button:active, .btn:active {
+    transform: scale(0.98);
+}
+
+button.danger {
+    background: var(--danger);
+}
+
+button.danger:hover {
+    background: #c0392b;
+}
+
+/* === TABLES === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+thead {
+    background: var(--bg-light);
+    font-weight: 600;
+}
+
+th {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+td form {
+    background: var(--white) !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+    border: none !important;
+    display: inline-block !important;
+}
+
+td form button {
+    background: transparent !important;
+    color: var(--danger) !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color 0.2s ease-in-out !important;
+}
+
+td form button:hover {
+    color: var(--white) !important;
+    text-decoration: none !important;
+    background: transparent !important;
+}
+
+tbody tr:hover {
+    background: var(--bg-light);
+}
+
+/* === DIVS & SECTIONS === */
+div[style*="border"] {
+    border-radius: 4px;
+}
+
+.section, .card {
+    background: var(--bg-light);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+
+.section h3 {
+    margin-top: 0;
+}
+
+/* === MESSAGES === */
+.success, [style*="color: green"] {
+    background: #d5f4e6;
+    color: var(--success);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--success);
+}
+
+.error, [style*="color: red"] {
+    color: var(--danger);
+    font-size: 0.9rem;
+    margin-top: -0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* === FOOTER === */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--secondary);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--white);
+}
+
+/* === UTILITY CLASSES === */
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    color: var(--text-light);
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+.hidden {
+    display: none;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+/* === BREEZE OVERRIDES === */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gray-100 {
+    background: var(--bg-light);
+}
+
+.bg-white {
+    background: var(--white);
+}
+
+.text-gray-600 {
+    color: var(--text-light);
+}
+
+.text-gray-800 {
+    color: var(--text);
+}
+
+.border {
+    border: 1px solid var(--border);
+}
+
+.rounded {
+    border-radius: 4px;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    nav a, nav button {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.75rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+
+    nav {
+        gap: 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+
+
+nav form {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    display: inline-block !important;
+}
+
+nav a, 
+nav form button {
+    background: transparent !important;
+    color: var(--white) !important;
+    padding: 0.5rem 0 !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s ease-in-out !important;
+}
+
+nav a:hover, 
+nav form button:hover {
+    opacity: 0.7 !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+nav a.active {
+    border-bottom: 2px solid var(--white) !important;
+    text-decoration: underline;
+}

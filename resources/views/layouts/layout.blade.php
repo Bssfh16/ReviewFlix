@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReviewFlix</title>
+    <link rel="stylesheet" href="/css/reviewflix.css">
 </head>
 <body>
     <header>
         <h1>ReviewFlix - @yield('title')</h1>
         <nav>
-            <a href="/">Home</a> | 
-            <a href="/news">News</a> | 
-            <a href="/movies">Movies</a> | 
-            <a href="/series">Series</a> |
-            <a href="/reviews">Reviews</a> |          
-            <a href="/faq">FAQ</a> |
-            <a href="/contact">Contact</a>
+            <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a> | 
+            <a href="/news" class="{{ request()->is('news*') ? 'active' : '' }}">News</a> | 
+            <a href="/movies" class="{{ request()->is('movies*') ? 'active' : '' }}">Movies</a> | 
+            <a href="/series" class="{{ request()->is('series*') ? 'active' : '' }}">Series</a> |
+            <a href="/reviews" class="{{ request()->is('reviews*') ? 'active' : '' }}">Reviews</a> |          
+            <a href="/faq" class="{{ request()->is('faq*') ? 'active' : '' }}">FAQ</a> |
+            <a href="/contact" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact</a>
 
             @auth
                 <a href="/profile/{{ auth()->user()->username }}">Profile</a> |
