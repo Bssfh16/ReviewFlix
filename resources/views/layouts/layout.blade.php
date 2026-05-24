@@ -16,12 +16,12 @@
             <a href="/series" class="{{ request()->is('series*') ? 'active' : '' }}">Series</a> |
             <a href="/reviews" class="{{ request()->is('reviews*') ? 'active' : '' }}">Reviews</a> |          
             <a href="/faq" class="{{ request()->is('faq*') ? 'active' : '' }}">FAQ</a> |
-            <a href="/contact" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact</a>
+            <a href="/contact" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact</a> |
 
             @auth
                 <a href="/profile/{{ auth()->user()->username }}">Profile</a> |
                 @if(auth()->check() && auth()->user()->is_admin)
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard">Dashboard</a> |
                 @endif
                     <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                         @csrf
