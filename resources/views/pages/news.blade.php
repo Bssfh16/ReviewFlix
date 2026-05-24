@@ -10,7 +10,7 @@
             <h3>{{ $article->title }}</h3>
             
             @if($article->image)
-                <img src="{{ $article->image }}" alt="" style="width: 200px;">
+                <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" style="width: 100%; max-width: 400px; border-radius: 8px;">
             @endif
             
             <p>{{ $article->content }}</p>

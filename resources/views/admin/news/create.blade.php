@@ -5,7 +5,7 @@
 @section('content')
     <h2>Create News Article</h2>
 
-    <form method="POST" action="{{ route('news.store') }}">
+    <form method="POST" action="{{ route('news.store') }}" enctype="multipart/form-data">
         @csrf
 
         <label>Title:</label>
@@ -16,8 +16,8 @@
         <textarea name="content" rows="10" required></textarea>
         @error('content') <p style="color: red;">{{ $message }}</p> @enderror
 
-        <label>Image URL:</label>
-        <input type="url" name="image">
+        <label>News Image (Upload):</label>
+        <input type="file" name="image" accept="image/*" required>
         @error('image') <p style="color: red;">{{ $message }}</p> @enderror
 
         <button type="submit">Create</button>

@@ -13,7 +13,6 @@ class NewsItem extends Model
     'title',
     'content',
     'image',
-    'user_id',
     ];
 
     public function user() {

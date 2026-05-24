@@ -9,15 +9,15 @@ use App\Models\User;
 class NewsController extends Controller 
 {
     public function index() {
-            $news = NewsItem::all();
+            $news = NewsItem::latest()->get();
             return view('pages.news', ['news' => $news]);
     }
     
     // Admin: List all
     public function adminIndex()
     {
-    $news = NewsItem::with('user')->latest()->paginate(10);
-    return view('admin.news.index', compact('news'));
+        $news = NewsItem::with('user')->latest()->paginate(10);
+        return view('admin.news.index', compact('news'));
     }
 
     // Admin: Create form
@@ -29,18 +29,17 @@ class NewsController extends Controller
     // Admin: Store
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'image' => 'nullable|url',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
-        NewsItem::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'image' => $request->image,
-            'user_id' => auth()->id(),
-        ]);
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news_images', 'public');
+        }
+
+        NewsItem::create($validated);
 
         return redirect(route('news.admin-index'))->with('success', 'News created!');
     }
@@ -55,14 +54,21 @@ class NewsController extends Controller
     // Admin: Update
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'image' => 'nullable|url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news_images', 'public');
+        } else {
+            unset($validated['image']);
+        }
+
         $newsItem = NewsItem::findOrFail($id);
-        $newsItem->update($request->all());
+        
+        $newsItem->update($validated);
 
         return redirect(route('news.admin-index'))->with('success', 'News updated!');
     }
