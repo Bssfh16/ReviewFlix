@@ -18,7 +18,7 @@ class MediaItemFactory extends Factory
     public function definition(): array
     {
         $types = ['Movie', 'Serie'];
-        $genres = ['Horror', 'Comedy', 'Action', 'Sci-Fi', 'Thriller', 'Drama', 'Animation', 'Romance', 'Biopic', 'Documentary', 'Adventure'];
+        $genres = ['Horror', 'Comedy', 'Action', 'Sci-Fi', 'Thriller', 'Drama', 'Animation'];
 
         $type = $this->faker->randomElement($types);
 

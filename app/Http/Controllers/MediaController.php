@@ -28,7 +28,12 @@ class MediaController extends Controller
     // Admin: Create form
     public function create()
     {
-        return view('admin.media.create');
+        $genres = \App\Models\MediaItem::select('genre')
+                    ->distinct()
+                    ->whereNotNull('genre')
+                    ->pluck('genre');
+
+        return view('admin.media.create', compact('genres'));
     }
 
     // Admin: Store
@@ -43,6 +48,11 @@ class MediaController extends Controller
             'duration' => 'nullable|integer',
             'release_date' => 'nullable|date',
             'episodes' => 'nullable|integer',
+        ]);
+
+        $finalGenre = $request->filled('new_genre') ? $request->new_genre : $request->genre;
+        $request->merge([
+            'genre' => $finalGenre
         ]);
 
         MediaItem::create($request->all());

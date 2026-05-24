@@ -21,8 +21,42 @@
         @error('title') <p style="color: red;">{{ $message }}</p> @enderror
 
         <label>Genre:</label>
-        <input type="text" name="genre">
-        @error('genre') <p style="color: red;">{{ $message }}</p> @enderror
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+            
+            <select name="genre" id="genre_select" style="flex: 1;">
+                <option value="">Select an existing genre</option>
+                @foreach($genres as $genre)
+                    <option value="{{ $genre }}">{{ $genre }}</option>
+                @endforeach
+            </select>
+
+            <input type="text" name="new_genre" id="new_genre_input" placeholder="Type new genre name..." style="display: none; flex: 1;">
+
+            <button type="button" id="toggle_genre_btn" style="padding: 5px 10px; cursor: pointer;" title="Add new genre">
+                ➕
+            </button>
+        </div>
+
+        <script>
+            document.getElementById('toggle_genre_btn').addEventListener('click', function() {
+                let select = document.getElementById('genre_select');
+                let input = document.getElementById('new_genre_input');
+                
+                if (select.style.display === 'none') {
+                    select.style.display = 'block';
+                    input.style.display = 'none';
+                    input.value = '';
+                    this.innerHTML = '➕';
+                    this.title = 'Add new genre';
+                } else {
+                    select.style.display = 'none';
+                    select.value = '';
+                    input.style.display = 'block';
+                    this.innerHTML = '✖️';
+                    this.title = 'Cancel new genre';
+                }
+            });
+        </script>
 
         <label>Summary:</label>
         <textarea name="summary" rows="5"></textarea>
