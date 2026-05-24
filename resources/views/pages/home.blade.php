@@ -58,7 +58,7 @@
             <li>
                 <strong>{{ $review->mediaItem->title ?? 'Unknown Media' }}</strong>
                 <br>
-                
+
                 <p style="color: gray; font-style: italic; margin-top: -5px; margin-bottom: 0;">
                     Type: {{ $review->mediaItem->type ?? 'Onbekend' }}
                 </p>
@@ -80,7 +80,10 @@
 
                 <br>
                 <span style="color: gray; font-size: 0.9em;">
-                    by {{ $review->user->username ?? 'Unknown user' }}
+                    by 
+                        <a href="/profile/{{ $review->user->username }}" style="color: blue; text-decoration: underline;">
+                            {{ $review->user->username }}
+                        </a>
                 </span>
             </li>
         @empty
