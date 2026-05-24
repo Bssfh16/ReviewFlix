@@ -3,16 +3,21 @@ Dit project hoort bij het vak "Backend Web".
 Het onderwerp van de website is het weergeven van een mening over films en series.
 
 # Functionaliteiten
-- Het aanmaken van een account en inloggen (Authentication).
+- Het aanmaken van een account en inloggen.
 - Onderscheid tussen 'User' en 'Admin'.
-- Admin dashboard voor het beheren van gebruikers (rechten verlenen, ontnemen of handmatig aanmaken).
+- Admin dashboard voor het beheren van gebruikers en beheerders(rechten verlenen, ontnemen of aanmaken).
 - Een gepersonaliseerde profielpagina met de mogelijkheid om gegevens en een profielfoto aan te passen.
-- Het bekijken van de read-only profielen van andere gebruikers door te klikken op hun naam bij een review.
+- Het bekijken van de profielen van andere gebruikers door te klikken op hun naam bij een review.
 - Het weergeven van de laatste films, series, reviews en nieuwsberichten op de homepagina.
-- Het toevoegen, bewerken en verwijderen van nieuwsartikelen inclusief afbeeldingen.
+- Het schrijven en publiceren van reviews en sterren-beoordelingen voor specifieke films en series.
 - Een FAQ-pagina waar vragen en antwoorden gegroepeerd per categorie worden weergegeven.
 - Het indienen van een contactformulier dat een mail genereert en logt in het systeem.
 - Een admin-overzicht om binnengekomen contactberichten in te zien.
+- Als beheerder inloggen op een speciaal, afgeschermd Admin Dashboard.
+- Als beheerder alle gebruikers beheren: admin-rechten verlenen of intrekken, en handmatig nieuwe gebruikersaccounts aanmaken.
+- Als beheerder het nieuws beheren: nieuwe artikelen toevoegen, bewerken en verwijderen, inclusief het uploaden van cover-afbeeldingen.
+- Als beheerder de FAQ-pagina beheren door nieuwe categorieën, vragen en antwoorden toe te voegen, aan te passen of te verwijderen.
+- Als beheerder films en series kunnen toevoegen met hun bijbehorende kenmerken.
 
 # Technische vereisten
 - Views
