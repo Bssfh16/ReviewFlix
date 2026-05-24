@@ -81,7 +81,7 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
     - Dit is geen design vak dus steek niet teveel tijd in het mooi maken van je project, maar zorg voor een duidelijke en professionele layout
  
 # Installatiehandleiding
-- Zorg ervoor dat Laravel Herd gedownload is, executed is.
+- Zorg ervoor dat Laravel Herd gedownload is en executed is.
     - Zorg er ook voor dat de default-installatie gedaan werd zodat de map'Herd' gemaakt werd in C:\Users\Naam\Herd .
 - Download Visual Studio Code, in het geval dit nog niet gedaan is.
 - Aan de linkerkant van het scherm op Visual Studio Code, bevindt zich een vierkant gevuld met vier blokjes:
@@ -103,6 +103,11 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
   - Plak het en hernoem de kopie naar .env .  
 - Voer het volgende commando uit in de terminal om de website te beveiligen met een unieke sleutel:
   - php artisan key:generate
+- Voer in de terminal de volgende commando's uit om de frontend-bestanden te installeren en te bouwen:
+  - (ENKEL bij een rode error in verband met de beveiliging)
+    - Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned 
+  - npm install
+  - npm run build
 - Voer dit commando uit om data te genereren:
   - php artisan migrate:fresh --seed
 - Open vervolgens de browser en typ dit om de website te openen:
