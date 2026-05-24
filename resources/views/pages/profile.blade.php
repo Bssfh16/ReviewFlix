@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <h2>Welcome: {{ $user->username }}</h2>
+        <h2>Username: {{ $user->username }}</h2>
         
         @if($user->pp)
             @php

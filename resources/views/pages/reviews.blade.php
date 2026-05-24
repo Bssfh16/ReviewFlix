@@ -21,7 +21,11 @@
                 <p>{{ $review->opinion }}</p>
             @endif
 
-            <p>By: {{ $review->user->username }}</p>
+            <p>By: 
+                <a href="/profile/{{ $review->user->username }}" style="color: blue; text-decoration: underline;">
+                    {{ $review->user->username }}
+                </a>
+            </p>
             
             <p><small>Posted: {{ $review->created_at->format('d-m-Y H:i') }}</small></p>
             <hr>
