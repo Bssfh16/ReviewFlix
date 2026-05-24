@@ -56,13 +56,25 @@
     <ul>
         @forelse($latestReviews as $review)
             <li>
-                <strong>{{ $review->rating }}/5</strong> 
+                <strong>
+                    <!-- Dit tekent 5 sterren -->
+                    @for ($i = 1; $i <= 5; $i++)
+                        @if ($i <= $review->rating)
+                            <span style="color: gold;">★</span> <!-- Ingevulde ster -->
+                        @else
+                            <span style="color: lightgray;">★</span> <!-- Lege/grijze ster -->
+                        @endif
+                    @endfor
+                </strong> 
                 <br>
                 <span style="color: gray; font-size: 0.9em;">
-                    {{ $review->user->username ?? 'Unknown user' }}
+                    by {{ $review->user->username ?? 'Unknown user' }}
                 </span>
-                <br>
-                <small>"{{ \Illuminate\Support\Str::limit($review->opinion, 50) }}"</small>
+                
+                @if($review->opinion)
+                    <br>
+                    <small>"{{ \Illuminate\Support\Str::limit($review->opinion, 500) }}"</small>
+                @endif
             </li>
         @empty
             <p>No reviews written yet.</p>
