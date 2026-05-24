@@ -99,8 +99,7 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
 - Voer in de terminal het volgende commando uit om alle benodigde bestanden van Laravel te downloaden:
   - composer install
 - Zoek in de projectbestanden naar het bestand genaamd .env.example . 
-  - Kopieer dit bestand
-  - Plak het en hernoem de kopie naar .env .  
+  - Hernoem het bestand naar .env .  
 - Voer het volgende commando uit in de terminal om de website te beveiligen met een unieke sleutel:
   - php artisan key:generate
 - Voer in de terminal de volgende commando's uit om de frontend-bestanden te installeren en te bouwen:
