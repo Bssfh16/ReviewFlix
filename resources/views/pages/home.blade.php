@@ -58,6 +58,10 @@
             <li>
                 <strong>{{ $review->mediaItem->title ?? 'Unknown Media' }}</strong>
                 <br>
+                
+                <p style="color: gray; font-style: italic; margin-top: -5px; margin-bottom: 0;">
+                    Type: {{ $review->mediaItem->type ?? 'Onbekend' }}
+                </p>
 
                 @for ($i = 1; $i <= 5; $i++)
                     @if ($i <= $review->rating)

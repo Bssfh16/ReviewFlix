@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\NewsItem;
 use App\Models\MediaItem;
 use App\Models\FaqCategory;
@@ -11,6 +10,8 @@ use App\Models\FaqItem;
 use App\Models\Review;
 use App\Models\Contact;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
