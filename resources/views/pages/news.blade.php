@@ -3,6 +3,8 @@
 @section('title', 'News')
 
 @section('content')
+    <h2>Our News</h2>
+
     @foreach($news as $article)
         <div>
             <h3>{{ $article->title }}</h3>
