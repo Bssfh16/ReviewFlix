@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <h2>{{ $user->username }}</h2>
+        <h2>Welcome: {{ $user->username }}</h2>
         
         @if($user->profile_photo)
             <img src="{{ $user->profile_photo }}" alt="{{ $user->username }}" style="width: 200px; border-radius: 10px;">
