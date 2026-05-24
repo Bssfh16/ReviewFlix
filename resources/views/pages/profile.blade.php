@@ -7,13 +7,16 @@
         <h2>Welcome: {{ $user->username }}</h2>
         
         @if($user->pp)
-            <img src="{{ $user->pp }}" alt="{{ $user->username }}" style="width: 200px; border-radius: 10px; margin-bottom: 20px;">
+            @php
+                $imageUrl = str_starts_with($user->pp, 'http') ? $user->pp : asset('storage/' . $user->pp);
+            @endphp
+            <img src="{{ $imageUrl }}" alt="{{ $user->username }}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
         @endif
         
         @if(auth()->check() && auth()->user()->id === $user->id)
             
             @if(request('edit') === 'true')
-                <form method="POST" action="{{ route('profile.update') }}">
+                <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
                     @csrf
                     
                     <label>Username:</label>
@@ -21,7 +24,7 @@
                     @error('username') <p style="color: red;">{{ $message }}</p> @enderror
 
                     <label>Profile Picture (URL):</label>
-                    <input type="url" name="pp" value="{{ $user->pp ?? '' }}">
+                    <input type="file" name="pp" accept="image/*">
                     @error('pp') <p style="color: red;">{{ $message }}</p> @enderror
 
                     <label>Favorite Flavors (Hold CTRL/CMD to select multiple):</label>

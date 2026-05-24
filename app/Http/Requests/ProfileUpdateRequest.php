@@ -22,7 +22,7 @@ class ProfileUpdateRequest extends FormRequest
             'birthday' => ['nullable', 'date'],
             'country' => ['nullable', 'string'],
             'about' => ['nullable', 'string'],
-            'pp' => ['nullable', 'url', 'max:255'],
+            'pp' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
             'flavors' => ['nullable', 'array'],
             'flavors.*' => ['string', 'max:255'],    
         ];

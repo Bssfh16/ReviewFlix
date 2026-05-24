@@ -38,7 +38,15 @@ class ProfileController extends Controller
     {
         $user = $request->user();
         
-        $user->fill($request->validated());
+        $validated = $request->validated(); 
+
+        if ($request->hasFile('pp')) {
+            $validated['pp'] = $request->file('pp')->store('profile_photos', 'public');
+        } else {
+            unset($validated['pp']);
+        }
+        
+        $user->fill($validated);
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
