@@ -82,7 +82,7 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
  
 # Installatiehandleiding
 - Zorg ervoor dat Laravel Herd gedownload is en executed is.
-    - Zorg er ook voor dat de default-installatie gedaan werd zodat de map'Herd' gemaakt werd in C:\Users\Naam\Herd .
+    - Zorg er ook voor dat de default-installatie gedaan werd zodat de map 'Herd' gemaakt werd in C:\Users\Naam\Herd .
 - Download Visual Studio Code, in het geval dit nog niet gedaan is.
 - Aan de linkerkant van het scherm op Visual Studio Code, bevindt zich een vierkant gevuld met vier blokjes:
   - Klik op dat vierkant.
