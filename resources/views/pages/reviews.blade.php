@@ -3,7 +3,7 @@
 @section('title', 'Reviews')
 
 @section('content')
-    <h2>Latest Reviews</h2>
+    <h2>Our Reviews</h2>
 
     @foreach($reviews as $review)
         <div>
