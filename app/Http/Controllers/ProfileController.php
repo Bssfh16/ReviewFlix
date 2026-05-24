@@ -19,7 +19,16 @@ class ProfileController extends Controller
     public function show($username)
     {
         $user = User::where('username', $username)->firstOrFail();
-        return view('pages.profile', ['user' => $user]);
+
+        $genres = \App\Models\MediaItem::select('genre')
+                    ->distinct()
+                    ->whereNotNull('genre')
+                    ->pluck('genre');
+
+        return view('pages.profile', [
+            'user' => $user,
+            'genres' => $genres
+            ]);
     }
 
     /**

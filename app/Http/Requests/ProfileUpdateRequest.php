@@ -21,7 +21,10 @@ class ProfileUpdateRequest extends FormRequest
             'username' => ['required', 'unique:users,username,' . auth()->id()],
             'birthday' => ['nullable', 'date'],
             'country' => ['nullable', 'string'],
-            'about' => ['nullable', 'string'],    
+            'about' => ['nullable', 'string'],
+            'pp' => ['nullable', 'url', 'max:255'],
+            'flavors' => ['nullable', 'array'],
+            'flavors.*' => ['string', 'max:255'],    
         ];
     }
 }

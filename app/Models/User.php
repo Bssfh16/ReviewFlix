@@ -32,6 +32,7 @@ class User extends Authenticatable implements PasskeyUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'birthday' => 'date',
+            'flavors' => 'array',
         ];
     }
 
