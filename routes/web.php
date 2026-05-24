@@ -9,11 +9,23 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminUserController;
 
+use App\Models\MediaItem;
+use App\Models\Review;
+use App\Models\NewsItem;
 
 
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('/', function () {
+    $latestMovies = MediaItem::where('type', 'Movie')->latest()->take(5)->get();
+    $latestSeries = MediaItem::where('type', 'Serie')->latest()->take(5)->get();
+    $latestNews = NewsItem::latest()->take(5)->get();
+    $latestReviews = Review::with('user')->latest()->take(5)->get();
+        return view('pages.home', compact('latestMovies', 'latestSeries', 'latestReviews', 'latestNews'));
+});
+
 
 Route::get('/news', [NewsController::class, 'index']);
 
@@ -31,11 +43,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/contact', [ContactController::class, 'index']);
-
 Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');
-
 Route::post('/profile/update', [ProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
 
