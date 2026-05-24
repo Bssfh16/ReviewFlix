@@ -81,7 +81,8 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
     - Dit is geen design vak dus steek niet teveel tijd in het mooi maken van je project, maar zorg voor een duidelijke en professionele layout
  
 # Installatiehandleiding
-- Zorg ervoor dat Laravel Herd gedownload is en executed is.
+- Zorg ervoor dat Laravel Herd gedownload is, executed is.
+    - Zorg er ook voor dat de default-installatie gedaan werd zodat de map'Herd' gemaakt werd in C:\Users\Naam\Herd .
 - Download Visual Studio Code, in het geval dit nog niet gedaan is.
 - Aan de linkerkant van het scherm op Visual Studio Code, bevindt zich een vierkant gevuld met vier blokjes:
   - Klik op dat vierkant.
@@ -91,7 +92,8 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
   - Op Visual Studio Code bevindt zicht een icoontje links in het menu.
   - Het icoontje bestaat uit cirkels die met elkaar verbonden zijn door lijnen.
   - Klik daarop en plak de link van het project daarop om de repository te clonen.
-    - Zorg dat de map de naam reviewflix heeft, zodat Laravel Herd deze herkent.
+    - Link: https://github.com/Bssfh16/ReviewFlix.git 
+    - Zorg dat de repository opgeslagen is in de Herd-map (meestal C:\Users\Naam\Herd of ~/Herd) en dat de map de naam reviewflix (niet hoofdlettergevoelig) heeft, zodat Laravel Herd deze herkent.
 - Open nu de ingebouwde terminal in Visual Studio Code:
   - Via het menu bovenaan: Terminal > New Terminal.
 - Voer in de terminal het volgende commando uit om alle benodigde bestanden van Laravel te downloaden:
