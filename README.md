@@ -106,7 +106,9 @@ Het onderwerp van de website is het weergeven van een mening over films en serie
   - Password : Password!321
 
 # Screenshots van de applicatie
-
+<img width="1920" height="912" alt="screencapture-reviewflix-test-login-2026-05-24-17_02_41" src="https://github.com/user-attachments/assets/3e40e135-b426-446a-bf22-9a671c5eefb8" />
+<img width="1920" height="2381" alt="screencapture-reviewflix-test-2026-05-24-17_01_55" src="https://github.com/user-attachments/assets/80611ae0-af3c-400b-b095-241cfef1dbb2" />
+<img width="1920" height="1962" alt="screencapture-reviewflix-test-dashboard-2026-05-24-17_02_24" src="https://github.com/user-attachments/assets/5fac868c-43dc-496f-87fa-06fdc369985e" />
 
 # Bronnen
 - Cursus "Backend Web"; raadpleegbaar via canvas.ehb.be
