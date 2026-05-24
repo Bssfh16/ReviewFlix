@@ -8,6 +8,10 @@
     @foreach($reviews as $review)
         <div>
             <h3>{{ $review->mediaItem->title }}</h3>
+
+            <p style="color: gray; font-style: italic; margin-top: -5px;">
+                Type: {{ $review->mediaItem->type ?? 'Onbekend' }}
+            </p>
             
             @for ($i = 1; $i <= 5; $i++)
                 @if ($i <= $review->rating)
