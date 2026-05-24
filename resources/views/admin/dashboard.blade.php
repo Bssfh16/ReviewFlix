@@ -5,33 +5,33 @@
         </h2>
     </x-slot>
 
-    <!-- Admin Menu/Navigation -->
-    <div class="mb-8 p-4 bg-gray-100 rounded">
-        <h3 class="text-lg font-bold mb-4">Admin Panel</h3>
-        <div class="space-y-2">
-            <a href="{{ route('dashboard') }}" class="block">Dashboard (Users)</a>
-            <a href="{{ route('news.admin-index') }}" class="block">Manage News</a>
-            <a href="{{ route('media.admin-index') }}" class="block">Manage Movies/Series</a>
-            <a href="{{ route('faq.admin-index') }}" class="block">Manage FAQ</a>
-            <a href="{{ route('contacts.admin-index') }}" class="block">View Messages</a>
-        </div>
-    </div>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             
-            <!-- Success/Error messages -->
+            <div class="p-4 bg-gray-100 rounded flex flex-wrap items-center gap-6">
+                <h3 class="text-lg font-bold text-gray-900">Admin Panel</h3>
+                
+                <div class="flex flex-wrap gap-6">
+                    <a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-gray-900 hover:underline font-medium">Dashboard (Users)</a>
+                    <a href="{{ route('news.admin-index') }}" class="text-gray-700 hover:text-gray-900 hover:underline font-medium">Manage News</a>
+                    <a href="{{ route('media.admin-index') }}" class="text-gray-700 hover:text-gray-900 hover:underline font-medium">Manage Movies/Series</a>
+                    <a href="{{ route('faq.admin-index') }}" class="text-gray-700 hover:text-gray-900 hover:underline font-medium">Manage FAQ</a>
+                    <a href="{{ route('contacts.admin-index') }}" class="text-gray-700 hover:text-gray-900 hover:underline font-medium">View Messages</a>
+                </div>
+            </div>
+
             @if (session('success'))
-                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+                <div class="p-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
                     {{ session('success') }}
                 </div>
             @endif
             @if (session('error'))
-                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                <div class="p-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
                     {{ session('error') }}
                 </div>
             @endif
 
+            
             <!-- Form to Add User (Breeze Style) -->
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <header>
